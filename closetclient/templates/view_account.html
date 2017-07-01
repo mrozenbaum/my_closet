@@ -1,0 +1,14 @@
+  {% extends 'base.html' %}
+  {% block content %}
+  {% load staticfiles %}
+
+    {% include "navbar.html" %}
+
+    <h1>Account view</h1>
+
+  
+    <ul>
+          
+          <li><a href="{%url 'closetclient:categories' %}">Categories</a></li>
+    </ul>
+{% endblock %}

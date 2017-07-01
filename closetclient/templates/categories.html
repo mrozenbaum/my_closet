@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="container-fluid">
+  {% include "navbar.html" %}
+
+    <div class="row">
+      <div class="col-sm-10">
+        <h2>MyCloset Categories view</h2>
+        {% if latest_category_list %}
+        <ul>
+        {% for category in latest_category_list %}
+            <li><a href="/closetclient/{{ category.id }}/">{{ category.category_name }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No categories are available.</p>
+        {% endif %} 
+      </div>
+    </div>
+
+  </div>
+{% endblock %}  

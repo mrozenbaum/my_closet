@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+  {% load staticfiles %}
+  {% block content %}
+    {% include "navbar.html" %}
+
+    <h1>Lets start adding items to your closet...</h1>
+
+
+    <form action="{% url 'closetclient:add_item' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ item_form.as_p }}
+      <input type="submit" value="Add It" />
+    </form>
+  {% endblock %} 
