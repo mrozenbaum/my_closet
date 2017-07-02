@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'closetclient.apps.ClosetclientConfig',
-    'bootstrap3',
 ]
 
 MIDDLEWARE = [

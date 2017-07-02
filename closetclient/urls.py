@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^categories$', closetclient.views.categories, name='categories'),
     url(r'^view_account$', closetclient.views.view_account, name='view_account'),
     url(r'^add_item$', closetclient.views.add_item, name='add_item'),
+    url(r'^item_details$', closetclient.views.item_details, name='item_details'),
+
 ]

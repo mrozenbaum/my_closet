@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
   {% load staticfiles %}
-  {% block content %}
+    {% block content %}
     {% include "navbar.html" %}
 
-    <h1>Lets start adding items to your closet...</h1>
+    <h1>Add item's to your closet...</h1>
+    {% block sidebar %}
+    <ul>
+      <li><a href="/closetclient/item_details">Cancel</a></li>
+    </ul>
+    {% endblock %}
 
 
-    <form action="{% url 'closetclient:add_item' %}" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ item_form.as_p }}
-      <input type="submit" value="Add It" />
-    </form>
-  {% endblock %} 
+      <form action="/closetclient/add_item" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <ul>
+        {{ item_form.as_ul }}
+        </ul>
+
+        <input type="submit" name="submit" value="Add Item" />
+      </form>
+    {% endblock %} 
